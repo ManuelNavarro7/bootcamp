@@ -11,6 +11,10 @@ export const Clase5 = () => {
   const [newNote, setNewnote] = useState("");
   const [loading, setLoading] = useState(false);
   const [showAll, setShowAll] = useState(true);
+
+  const ids = note.map((note) => note.id);
+  const maxId = Math.max(...ids);
+
   /*
   useEffect(() => {
     setLoading(true);
@@ -46,10 +50,11 @@ export const Clase5 = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const noteAddToState = {
       titel: newNote,
       body: newNote,
-      userId: 1,
+      userId: maxId,
     };
 
     createNotes(noteAddToState)
