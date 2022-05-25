@@ -11,10 +11,10 @@ export const Clase5 = () => {
   const [newNote, setNewnote] = useState("");
   const [loading, setLoading] = useState(false);
   const [showAll, setShowAll] = useState(true);
-
+  /*
   const ids = note.map((note) => note.id);
   const maxId = Math.max(...ids);
-
+*/
   /*
   useEffect(() => {
     setLoading(true);
