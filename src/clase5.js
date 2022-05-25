@@ -34,6 +34,7 @@ export const Clase5 = () => {
     setLoading(true);
 
     getAllNotes().then((note) => {
+      console.log(note);
       setNote(note);
       setLoading(false);
     });
@@ -52,9 +53,8 @@ export const Clase5 = () => {
     event.preventDefault();
 
     const noteAddToState = {
-      titel: newNote,
+      title: newNote,
       body: newNote,
-      userId: maxId,
     };
 
     createNotes(noteAddToState)
@@ -73,6 +73,7 @@ export const Clase5 = () => {
   return (
     <div>
       <h1>Notes</h1>
+
       <button onClick={handleShowAll}>
         {showAll ? "Show only important" : "Show all"}
       </button>
@@ -90,7 +91,7 @@ export const Clase5 = () => {
                 key={note.id}
                 id={note.id}
                 title={note.title}
-                body={note.body}
+                body={note.content}
               />
             </div>
           );
